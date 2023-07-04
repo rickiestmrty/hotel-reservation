@@ -1,85 +1,123 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div>
+    <el-container class="common-layout">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <el-header class="header">
+        <div class="header-left-side">
+          <img alt="Vue logo" class="logo" src="@/assets/Logo.png" width="125" height="125" />
+          <h1>Header</h1>
+        </div>
+        <div class="header-right-side">hello</div>
+      </el-header>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+      <el-container class="layout-container">
+        <div class="empty-container"></div>
+        <el-aside width="200px"><SideMenu /></el-aside>
+        <el-container class="main-container">
+          <el-main>Main</el-main>
+          <el-footer>Footer</el-footer>
+        </el-container>
+        <div class="empty-container"></div>
+      </el-container>
+    </el-container>
+  </div>
 
-  <RouterView />
 </template>
 
+<script setup>
+import { RouterLink, RouterView } from 'vue-router';
+import SideMenu from './views/SideMenu.vue';
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+/* Set height and width of the root element */
+html, body {
+  height: 100%;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+/* Set full height for the container */
+.common-layout {
+  height: auto;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+/* Set full width and position the header at the top */
+el-header {
+  width: 100%;
+  height: 100px;
+  position: static;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+/* Position the header elements */
+.header-left-side {
+  display: flex;
+  align-items: center;
 }
 
-nav a:first-of-type {
-  border: 0;
+.header-right-side{
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+/* Style the logo */
+.logo {
+  margin-right: 10px;
 }
+
+/* Set the aside width and style */
+el-aside {
+  width: 15%;
+}
+
+/* Style the main container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+}
+
+/* Set the main content to grow and occupy remaining space */
+el-main {
+  flex: 1;
+  background-color: rgb(141, 42, 91);
+}
+
+/* Style the footer */
+el-footer {
+  margin-top: 10px;
+  background-color: rgb(36, 177, 36);
+}
+
+.layout-container {
+  height: 100%;
+  display: flex;
+  position: static;
+}
+
+/* Center the content in the layout container */
+.el-container {
+  margin: auto;
+}
+
+.empty-container{
+  width: 15%;
+}
+
+
 </style>
+
