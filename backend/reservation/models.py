@@ -11,7 +11,10 @@ class Room(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
-class Bookings(models.Model):
+    def __str__(self) -> str:
+        return self.name
+
+class Booking(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     customer_name = models.CharField(max_length=200)
     room_id = models.ForeignKey("Room", on_delete=models.CASCADE)
@@ -19,3 +22,6 @@ class Bookings(models.Model):
     end_date = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.customer_name
