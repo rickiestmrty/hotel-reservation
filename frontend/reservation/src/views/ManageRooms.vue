@@ -46,5 +46,11 @@ onMounted(() => {
 
 .main-content{
     min-height: 300px;
+    
+}
+
+el-table{
+    border-radius: 2px;
+    box-shadow: 2px black ;
 }
 </style>

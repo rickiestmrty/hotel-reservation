@@ -7,7 +7,9 @@
           <img alt="Vue logo" class="logo" src="@/assets/Logo.png" width="125" height="125" />
           <h1>N and F Guest House</h1>
         </div>
-        <div class="header-right-side">hello</div>
+        <div class="header-right-side">
+          <el-button type="default">Account details</el-button>
+        </div>
       </el-header>
 
       <el-container class="layout-container">
@@ -15,7 +17,7 @@
         <el-aside class="aside" width="200px"><SideMenu /></el-aside>
         <el-container class="main-container">
           <el-main class="main"><RouterView /></el-main>
-          <el-footer class="footer">Footer</el-footer>
+          <el-footer class="footer">contact: nestordesabille4@gmail.com</el-footer>
         </el-container>
         <div class="empty-container"></div>
       </el-container>
@@ -81,12 +83,12 @@ html, body {
   width: 15%;
   padding-top: 20px;
   padding-right: 20px;
+  height: 100%;
 }
 
 /* Style the main container */
 .main-container {
   display: flex;
-
   
 }
 
@@ -99,13 +101,13 @@ html, body {
 /* Style the footer */
 .footer {
   margin-top: 10px;
-  background-color: rgb(36, 177, 36);
   height: 30%;
 }
 
 .layout-container {
   min-height: 100%;
   display: flex;
+  
 }
 
 /* Center the content in the layout container */

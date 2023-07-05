@@ -58,8 +58,16 @@ import {
 
 <style scoped>
 .SideMenu{
-    width: fit-content;
+  width: fit-content;
+  background-color: #383737;
+  border-radius: 5px;
+  min-height: 400px;
+  
 }
+
+.SideMenu el-menu router-link el-menu-item template {
+    text-decoration: none !important;
+  }
 
 el-menu-item {
   display: flex;
