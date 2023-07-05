@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from .models import Room, Booking
-from .serializers import RoomSerializer
+from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -41,3 +41,17 @@ def room_detail(request, id):
     elif request.method == 'DELETE':
         room.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'POST'])
+def booking_list(request):
+
+    if request.method == 'GET':
+        rooms = Booking.objects.all()
+        serializer = BookingSerializer(rooms, many=True)
+        return Response(serializer.data)
+    
+    elif request.method == 'POST':
+        serializer = BookingSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)  
