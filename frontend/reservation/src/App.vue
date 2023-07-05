@@ -5,7 +5,7 @@
       <el-header class="header">
         <div class="header-left-side">
           <img alt="Vue logo" class="logo" src="@/assets/Logo.png" width="125" height="125" />
-          <h1>Header</h1>
+          <h1>N and F Guest House</h1>
         </div>
         <div class="header-right-side">hello</div>
       </el-header>
@@ -14,13 +14,15 @@
         <div class="empty-container"></div>
         <el-aside width="200px"><SideMenu /></el-aside>
         <el-container class="main-container">
-          <el-main>Main</el-main>
+          <el-main><RouterView /></el-main>
           <el-footer>Footer</el-footer>
         </el-container>
         <div class="empty-container"></div>
       </el-container>
     </el-container>
   </div>
+
+  
 
 </template>
 
@@ -81,6 +83,8 @@ el-header {
 /* Set the aside width and style */
 el-aside {
   width: 15%;
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
 /* Style the main container */

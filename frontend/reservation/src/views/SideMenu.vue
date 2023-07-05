@@ -1,5 +1,5 @@
 <template>
-  <el-menu
+  <!-- <el-menu
     class="SideMenu"
     active-text-color="#409EFF"
     text-color="#909399"
@@ -17,11 +17,42 @@
         <template #title>Reserve Guest</template>
       </el-menu-item>
     </RouterLink>
+  </el-menu> -->
+  <el-menu 
+    class="SideMenu"
+    active-text-color="#409EFF"
+    text-color="#909399"
+    background-color="#FFFFFF"
+    :router="true">
+  
+    <router-link to="/">
+      <el-menu-item index="1">
+        <el-icon><Avatar /></el-icon>
+        <span >Reserve Guest</span>
+      </el-menu-item>
+    </router-link>
+    <router-link to="/rooms">
+      <el-menu-item index="2">
+        <el-icon><Room /></el-icon>
+        <span>Rooms</span>
+      </el-menu-item>
+    </router-link>
+    <router-link to="/bookings">
+      <el-menu-item index="3">
+        <el-icon><Calendar /></el-icon>
+        <span>Bookings</span>
+      </el-menu-item>
+    </router-link>
   </el-menu>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import {
+  Avatar,
+  OfficeBuilding as Room,
+  Calendar,
+} from '@element-plus/icons-vue'
 </script>
 
 
@@ -30,5 +61,20 @@ import { RouterLink, RouterView } from 'vue-router';
     width: fit-content;
 }
 
+el-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  
+}
+
+el-menu-item span{
+  
+}
+
+el-icon{
+  height: auto;
+  width: 50px;
+}
 
 </style>
