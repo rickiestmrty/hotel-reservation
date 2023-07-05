@@ -5,10 +5,10 @@
     </div>
     <div class="main-content">
         <el-table :data="bookings" style="width: 100%">
-            <el-table-column prop="room_id" label="Room"/>
+            <el-table-column prop="room_name" label="Room"/>
             <el-table-column prop="customer_name" label="Customer" />
-            <el-table-column prop="start_date" label="Check-In" />
-            <el-table-column prop="end_date" label="Check-Out" />
+            <el-table-column prop="start_date_string" label="Check-In" />
+            <el-table-column prop="end_date_string" label="Check-Out" />
             <el-table-column fixed="right" width="120">
             <template #default>
                 <el-button link type="primary" size="small"
