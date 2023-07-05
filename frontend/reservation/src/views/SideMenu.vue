@@ -28,19 +28,19 @@
     <router-link to="/">
       <el-menu-item index="1">
         <el-icon><Avatar /></el-icon>
-        <span >Reserve Guest</span>
+        <template #title>Reserve Guest</template>
       </el-menu-item>
     </router-link>
     <router-link to="/rooms">
       <el-menu-item index="2">
         <el-icon><Room /></el-icon>
-        <span>Rooms</span>
+        <template #title>Rooms</template>
       </el-menu-item>
     </router-link>
     <router-link to="/bookings">
       <el-menu-item index="3">
         <el-icon><Calendar /></el-icon>
-        <span>Bookings</span>
+        <template #title>Bookings</template>
       </el-menu-item>
     </router-link>
   </el-menu>
@@ -65,10 +65,6 @@ el-menu-item {
   display: flex;
   align-items: center;
   gap: 2px;
-  
-}
-
-el-menu-item span{
   
 }
 

@@ -12,10 +12,10 @@
 
       <el-container class="layout-container">
         <div class="empty-container"></div>
-        <el-aside width="200px"><SideMenu /></el-aside>
+        <el-aside class="aside" width="200px"><SideMenu /></el-aside>
         <el-container class="main-container">
-          <el-main><RouterView /></el-main>
-          <el-footer>Footer</el-footer>
+          <el-main class="main"><RouterView /></el-main>
+          <el-footer class="footer">Footer</el-footer>
         </el-container>
         <div class="empty-container"></div>
       </el-container>
@@ -52,7 +52,7 @@ html, body {
 }
 
 /* Set full width and position the header at the top */
-el-header {
+.header {
   width: 100%;
   height: 100px;
   position: static;
@@ -61,8 +61,7 @@ el-header {
   background-color: #fff;
   z-index: 1;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -72,16 +71,13 @@ el-header {
   align-items: center;
 }
 
-.header-right-side{
-}
-
 /* Style the logo */
 .logo {
   margin-right: 10px;
 }
 
 /* Set the aside width and style */
-el-aside {
+.aside {
   width: 15%;
   padding-top: 20px;
   padding-right: 20px;
@@ -90,27 +86,26 @@ el-aside {
 /* Style the main container */
 .main-container {
   display: flex;
-  flex-direction: column;
-  flex: 1;
+
   
 }
 
 /* Set the main content to grow and occupy remaining space */
-el-main {
+.main {
   flex: 1;
-  background-color: rgb(141, 42, 91);
+  height: 70%;
 }
 
 /* Style the footer */
-el-footer {
+.footer {
   margin-top: 10px;
   background-color: rgb(36, 177, 36);
+  height: 30%;
 }
 
 .layout-container {
-  height: 100%;
+  min-height: 100%;
   display: flex;
-  position: static;
 }
 
 /* Center the content in the layout container */
