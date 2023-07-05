@@ -46,8 +46,8 @@ def room_detail(request, id):
 def booking_list(request):
 
     if request.method == 'GET':
-        rooms = Booking.objects.all()
-        serializer = BookingSerializer(rooms, many=True)
+        bookings = Booking.objects.all()
+        serializer = BookingSerializer(bookings, many=True)
         return Response(serializer.data)
     
     elif request.method == 'POST':

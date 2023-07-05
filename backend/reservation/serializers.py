@@ -9,4 +9,18 @@ class RoomSerializer(serializers.ModelSerializer):
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        fields = ['id','customer_name','room_id','start_date','end_date','created_at','modified_at']
+    
+    def to_representation(self, instance):
+        representation = dict()
+        representation["id"] = instance.id
+        representation["customer_name"] = instance.customer_name
+        representation["room_id"] = instance.room_id.id
+        representation["room_name"] = instance.room_id.name
+        representation["start_date"] = instance.start_date
+        representation["start_date_string"] = instance.start_date.strftime('%B %d %Y - %H:%M')
+        representation["end_date"] = instance.end_date
+        representation["end_date_string"] = instance.end_date.strftime('%B %d %Y - %H:%M')
+        representation["created_at"] = instance.created_at
+        representation["modified_at"] = instance.modified_at
+
+        return representation
